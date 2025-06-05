@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 생성 웹사이트</title>
+    <link rel="stylesheet" href="z.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <button class="sidebar-menu-item">이미지 생성하기</button>
+                <button class="sidebar-menu-item">내 기록</button>
+                <button class="sidebar-menu-item">로그아웃</button>
+            </nav>
+        </aside>
+
+        <div class="main-content" id="mainContent">
+            <button class="sidebar-toggle-btn" id="sidebarToggleBtn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+
+            <div class="content-area" id="contentArea">
+                <div class="upload-section active" id="uploadSection">
+                    <input type="file" id="imageUploadInput" accept="image/*" hidden>
+                    <button class="upload-button" id="triggerImageUpload">
+                        이미지 첨부
+                    </button>
+                    <p class="file-name" id="uploadedFileName"></p>
+                    <p class="upload-info">* 첨부된 이미지는 최대 50MB</p>
+                </div>
+
+                <div class="options-section" id="optionsSection">
+                    <div class="left-image-panel">
+                        <div class="image-preview-after has-image" id="imagePreviewAfter"></div>
+                        <input type="file" id="imageUploadInputAfter" accept="image/*" hidden>
+                        <button class="upload-button-small" id="triggerImageUploadAfter">
+                            이미지 첨부
+                        </button>
+                        <p class="file-name-after" id="uploadedFileNameAfter"></p>
+                    </div>
+
+                    <div class="center-options-panel">
+                        <div class="option-row">
+                            <div class="option-box">
+                                <h3>테마</h3>
+                                <label><input type="radio" name="theme" value="해변"> 해변</label>
+                                <label><input type="radio" name="theme" value="축제"> 축제</label>
+                                <label><input type="radio" name="theme" value="식당"> 식당</label>
+                                <label><input type="radio" name="theme" value="바"> 바</label>
+                                <label><input type="radio" name="theme" value="집"> 집</label>
+                            </div>
+                            <div class="option-box">
+                                <h3>분위기</h3>
+                                <label><input type="radio" name="mood" value="따뜻한"> 따뜻한</label>
+                                <label><input type="radio" name="mood" value="차가운"> 차가운</label>
+                                <label><input type="radio" name="mood" value="신나는"> 신나는</label>
+                                <label><input type="radio" name="mood" value="세련된"> 세련된</label>
+                                <label><input type="radio" name="mood" value="아련한"> 아련한</label>
+                            </div>
+                        </div>
+
+                        <div class="option-row">
+                            <div class="option-box">
+                                <h3>제품 위치</h3>
+                                <label><input type="radio" name="productLocation" value="테이블 위"> 테이블 위</label>
+                                <label><input type="radio" name="productLocation" value="사람 손"> 사람 손</label>
+                                <label><input type="radio" name="productLocation" value="측면"> 측면</label>
+                                <label><input type="radio" name="productLocation" value="바에 진열"> 바에 진열</label>
+                            </div>
+                            <div class="option-box">
+                                <h3>이미지 크기</h3>
+                                <select id="imageSizeSelect">
+                                    <option value="1:1">1:1</option>
+                                    <option value="3:4">3:4</option>
+                                    <option value="4:3">4:3</option>
+                                    <option value="9:16">9:16</option>
+                                    <option value="16:9">16:9</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="option-row">
+                            <div class="additional-requirements option-box">
+                                <h3>추가 요구사항</h3>
+                                <div id="additionalReqFields">
+                                    </div>
+                                <div class="add-req-btn-wrapper">
+                                    <button class="add-req-btn" id="addRequirementBtn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-generate-button-panel">
+                        <button class="generate-button" id="generateImageBtn">
+                            이미지 생성
+                        </button>
+                    </div>
+                </div> </div>
+        </div>
+    </div>
+
+    <script src="z.js"></script>
+</body>
+</html>
